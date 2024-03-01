@@ -1,4 +1,7 @@
 def is_monotonic(array):
+    if len(array) <= 1:
+        return True
+    
     increase, decrease = True, True
 
     for i in range(len(array) - 1):
@@ -9,6 +12,3 @@ def is_monotonic(array):
 
     return increase or decrease
 
-nums = [1, 2, 3, 4, 5]
-func = is_monotonic(nums)
-print(func)
