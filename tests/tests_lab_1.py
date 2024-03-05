@@ -1,5 +1,5 @@
 import unittest
-from code_lab_1 import is_monotonic
+from is_monotonic_array import is_monotonic
 
 
 class TestIsMonotonic(unittest.TestCase):
@@ -28,6 +28,10 @@ class TestIsMonotonic(unittest.TestCase):
         array = [1, 1, 1, 1]
         self.assertTrue(is_monotonic(array))
 
+    def test_additional(self):
+        self.assertTrue(is_monotonic([2,2,2,2,2,3]))
+        self.assertTrue(is_monotonic([2,2,2,2,2,1]))
+        self.assertTrue(is_monotonic([1,1,1,1,1,0]))
 
 if __name__ == "__main__":
     unittest.main()
