@@ -4,29 +4,29 @@ class BinaryTree:
         self.left = left
         self.right = right
 
-def is_tree_balanced(node: BinaryTree) -> bool:
-    is_balanced = True  
-
-    def depth_first_search(node):
-        nonlocal is_balanced
+def depth_first_search(node):
         if node is None:
-            return 0
+            return True, 0
 
         left_subtree = depth_first_search(node.left)
         right_subtree = depth_first_search(node.right)
 
-        if left_subtree is None or right_subtree is None:
-            is_balanced = False
-        
-        height_diff = abs(left_subtree - right_subtree)
-        if height_diff > 1:
-            is_balanced = False
+        l_balance, left_height = left_subtree
+        r_balance, right_height = right_subtree
 
-        if left_subtree > right_subtree :
-            return left_subtree + 1
+        if abs(left_height - right_height) <= 1:
+            height_diff = True
         else:
-            return right_subtree + 1
+            height_diff = False
+            
+        height = max(left_height, right_height) + 1
 
-    depth_first_search(node)  
+        if l_balance and r_balance and height_diff:
+            return True, height  
+        else:
+            return False, height
+
+def is_tree_balanced(node: BinaryTree) -> bool:
+    is_balanced = depth_first_search(node)[0]
 
     return is_balanced
