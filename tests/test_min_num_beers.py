@@ -1,5 +1,5 @@
 import unittest
-from min_num_of_beers import make_matrix_of_preferences
+from src.min_num_of_beers import make_matrix_of_preferences
 
 class MinNumOfBeer(unittest.TestCase):
     def test_given_value(self):
