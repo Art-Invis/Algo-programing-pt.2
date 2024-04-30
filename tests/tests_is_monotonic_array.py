@@ -6,6 +6,7 @@ script_dir = os.path.dirname(os.path.relpath(__file__))
 sys.path.append(os.path.dirname(script_dir))
 from src.is_monotonic_array import is_monotonic
 
+
 class TestIsMonotonic(unittest.TestCase):
 
     def test_increasing(self):
