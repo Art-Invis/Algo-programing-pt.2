@@ -1,6 +1,10 @@
 import unittest
+import os
+import sys
 
-from Lab2_3 import binary_min_length_search
+script_dir = os.path.dirname(os.path.relpath(__file__))
+sys.path.append(os.path.dirname(script_dir))
+from src.min_board_length_search import binary_min_length_search
 
 
 class TestMinimalBoardLength(unittest.TestCase):
