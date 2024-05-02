@@ -4,6 +4,7 @@ class BinaryTree:
         self.left = left
         self.right = right
 
+
 def depth_first_search(node):
         if node is None:
             return True, 0
@@ -25,6 +26,7 @@ def depth_first_search(node):
             return True, height  
         else:
             return False, height
+
 
 def is_tree_balanced(node: BinaryTree) -> bool:
     is_balanced = depth_first_search(node)[0]
