@@ -4,7 +4,7 @@ import sys
 
 script_dir = os.path.dirname(os.path.relpath(__file__))
 sys.path.append(os.path.dirname(script_dir))
-from src.is_tree_balanced import is_tree_balanced, BinaryTree
+from src.is_binary_tree_balanced import is_tree_balanced, BinaryTree
 
 
 class TestIsTreeBalanced(unittest.TestCase):
