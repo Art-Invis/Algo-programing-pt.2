@@ -1,5 +1,5 @@
 import unittest
-from kmp_algorithm import compute_pref_array, search_by_kmp
+from src.kmp_algorithm import compute_pref_array, search_by_kmp
 
 
 class TestKMP(unittest.TestCase):

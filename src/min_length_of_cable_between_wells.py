@@ -1,6 +1,6 @@
 import csv
 
-def find_root(parents: dict, well: int) -> int:
+def find(parents: dict, well: int) -> int:
     """
     Find the root of the set containing the given well using union-find algorithm (disjoint sets).
 
@@ -13,7 +13,7 @@ def find_root(parents: dict, well: int) -> int:
     """
     if parents[well] == well:
         return well
-    return find_root(parents, parents[well])
+    return find(parents, parents[well])
 
 def union_sets(parents: dict, ranks: dict, well_a: int, well_b: int) -> None:
     """
@@ -28,8 +28,8 @@ def union_sets(parents: dict, ranks: dict, well_a: int, well_b: int) -> None:
     Returns:
     - None
     """
-    root_a = find_root(parents, well_a)
-    root_b = find_root(parents, well_b)
+    root_a = find(parents, well_a)
+    root_b = find(parents, well_b)
 
     if root_a != root_b:
         if ranks[root_a] < ranks[root_b]:
@@ -64,15 +64,15 @@ def kruskal_mst(edges: list) -> int:
 
     total_length = 0
     for well_a, well_b, distance in edges:
-        root_a = find_root(parents, well_a)
-        root_b = find_root(parents, well_b)
+        root_a = find(parents, well_a)
+        root_b = find(parents, well_b)
         if root_a != root_b:
             union_sets(parents, ranks, well_a, well_b)
             total_length += distance
 
-    root_set = find_root(parents, list(parents.keys())[0])
+    root_set = find(parents, list(parents.keys())[0])
     for well in parents:
-        if find_root(parents, well) != root_set:
+        if find(parents, well) != root_set:
             return -1
 
     return total_length
