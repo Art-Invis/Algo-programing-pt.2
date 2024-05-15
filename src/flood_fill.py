@@ -64,7 +64,7 @@ def write_matrix_to_file(matrix, file_output):
             file.write('[' + ', '.join(formatted_row) + ']\n')
 
     
-def main(file_input, file_output):
+def run_flood_fill_algorithm(file_input, file_output):
     rows, cols, x, y, target_color, matrix = read_matrix_from_file(file_input)
     matrix_image = bfs_fill_flood(rows, cols, x, y, target_color, matrix)
     write_matrix_to_file(matrix_image, file_output)
