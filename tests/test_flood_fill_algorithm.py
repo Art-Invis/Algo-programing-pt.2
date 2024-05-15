@@ -4,7 +4,7 @@ import sys
 
 script_dir = os.path.dirname(os.path.relpath(__file__))
 sys.path.append(os.path.dirname(script_dir))
-from src.flood_fill import bfs_fill_flood, run_flood_fill_algorithm
+from src.flood_fill_algorithm import bfs_fill_flood, run_flood_fill_algorithm
 
 class TestFillFlood(unittest.TestCase):
     
