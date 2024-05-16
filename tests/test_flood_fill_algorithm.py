@@ -41,8 +41,8 @@ class TestFillFlood(unittest.TestCase):
         self.assertEqual(bfs_fill_flood(num_rows, num_columns, x, y, new_color, matrix), expected_matrix)
 
     def test_file(self):
-        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-        resources_directory = os.path.join(project_root, 'resources')
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        resources_directory = os.path.join(script_dir, '..', 'resources')
         
         file_input = os.path.join(resources_directory, "input.txt")
         file_expected = os.path.join(resources_directory, "expected.txt")
