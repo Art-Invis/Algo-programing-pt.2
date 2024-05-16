@@ -40,20 +40,17 @@ class TestFillFlood(unittest.TestCase):
                            ['G', 'G', 'G', 'G', 'G']]
         self.assertEqual(bfs_fill_flood(num_rows, num_columns, x, y, new_color, matrix), expected_matrix)
 
-    def test_file(self):
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        resources_directory = os.path.join(script_dir, '..', 'resources')
+    def test_with_files(self):
         
-        file_input = os.path.join(resources_directory, "input.txt")
-        file_expected = os.path.join(resources_directory, "expected.txt")
-        file_output = os.path.join(resources_directory, "output.txt")
-        
+        file_input = "resources/input.txt"
+        file_expected_result = "resources/expected_result.txt"
+        file_output = "resources/output.txt"
         run_flood_fill_algorithm(file_input, file_output)
         
         with open(file_output, 'r') as file:
             result = [line.strip().split(',') for line in file.readlines()]
 
-        with open(file_expected, 'r') as file:
+        with open(file_expected_result, 'r') as file:
             expected_result = [line.strip().split(',') for line in file.readlines()]
             
         self.assertEqual(result, expected_result)
