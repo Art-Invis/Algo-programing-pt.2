@@ -42,9 +42,9 @@ class TestFillFlood(unittest.TestCase):
 
     def test_with_files(self):
         
-        file_input = "resources/input.txt"
-        file_expected_result = "resources/expected_result.txt"
-        file_output = "resources/output.txt"
+        file_input = "resources/input_flood_fill.txt"
+        file_expected_result = "resources/expected_flood_fill.txt"
+        file_output = "resources/output_flood_fill.txt"
         run_flood_fill_algorithm(file_input, file_output)
         
         with open(file_output, 'r') as file:
