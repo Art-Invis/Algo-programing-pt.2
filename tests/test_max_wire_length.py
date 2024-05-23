@@ -5,6 +5,8 @@ import sys
 script_dir = os.path.dirname(os.path.relpath(__file__))
 sys.path.append(os.path.dirname(script_dir))
 from src.max_wire_length import find_max_wire_length
+
+
 class TestMaxWireLength(unittest.TestCase):
     
     def test_example_1(self):
